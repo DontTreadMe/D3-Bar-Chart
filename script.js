@@ -42,5 +42,14 @@ const USGDP = {
        .attr("width", rectW)
        .attr("height", (d) => hScale(d[1]))
        .attr("fill", "#A647B2")
+    
+    const xAxis = d3.axisBottom(xScale);
+    const yAxis = d3.axisLeft(yScale);
+    svg.append("g")
+       .attr("transform", "translate(" + USGDP.padding + "," + (USGDP.h + USGDP.padding) + ")")
+       .call(xAxis);
+    svg.append("g")
+       .attr("transform", "translate(" + USGDP.padding + "," + USGDP.padding + ")")
+       .call(yAxis);
   }
 }
