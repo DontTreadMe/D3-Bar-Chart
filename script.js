@@ -16,10 +16,31 @@ const USGDP = {
     .style("opacity", 0),
   onReady: () => {
     json=JSON.parse(req.responseText);
-    const dataset = json.data;    
+    const dataset = json.data;
+    let yearsTick = [];
+    const years = dataset.map(d => {
+      yearsTick = yearsTick.concat(d[0].slice(0, 4));
+      switch (d[0].slice(5, 7)) {
+        case "01":
+          return d[0].slice(0, 5) + "Q1";
+          break;
+        case "04":
+          return d[0].slice(0, 5) + "Q2";
+          break;
+        case "07":
+          return d[0].slice(0, 5) + "Q3";
+          break;
+        case "10":
+          return d[0].slice(0, 5) + "Q4";
+          break;
+        default:
+          return d[0].toString();
+      }
+    });
+    console.log(yearsTick);
     const rectW = USGDP.w / dataset.length;
-    const minDate = d3.min(dataset, (d) => new Date(d[0]).getFullYear());
-    const maxDate = d3.max(dataset, (d) => new Date(d[0]).getFullYear());
+    const minDate = d3.min(yearsTick);
+    const maxDate = d3.max(yearsTick);
     console.log(minDate, maxDate);
     const xScale = d3.scaleLinear()
       .domain([minDate, maxDate])
@@ -49,7 +70,8 @@ const USGDP = {
         USGDP.div.transition()
           .duration(200)
           .style("opacity", .9);
-        USGDP.div.html(d[0] + "<br>" + "$" + d[1]);
+        USGDP.div.html(years[i] + "<br>" + "$" + d[1].toFixed(1).toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " Billion");
       })
       .on("mouseout", () => {
         USGDP.div.transition()        
