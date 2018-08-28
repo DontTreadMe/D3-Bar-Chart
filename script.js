@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 const USGDP = {
   w: 800,
   h: 400,
-  padding: 40,
+  padding: 56,
   div: d3.select(".diagram")
     .append("div")
     .attr("id", "tooltip")
@@ -54,7 +54,7 @@ const USGDP = {
     const svg = d3.select(".diagram")
       .append("svg")
       .attr("width", USGDP.w + USGDP.padding * 2)
-      .attr("height", USGDP.h + USGDP.padding * 2);
+      .attr("height", USGDP.h + USGDP.padding * 2.4);
     svg.selectAll("rect")
       .data(dataset)
       .enter()
@@ -80,7 +80,7 @@ const USGDP = {
       })
       .on("mousemove", (d, i) => {
         USGDP.div.style("left", (d3.event.pageX - 60) + "px")
-          .style("top", (d3.event.pageY - 50) + "px");
+          .style("top", (d3.event.pageY - 60) + "px");
       });
     const xAxis = d3.axisBottom(xScale)
       .tickFormat(d3.format(""));
