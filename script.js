@@ -71,7 +71,8 @@ const USGDP = {
           .duration(200)
           .style("opacity", .9);
         USGDP.div.html(years[i] + "<br>" + "$" + d[1].toFixed(1).toString()
-          .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " Billion");
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " Billion")
+          .attr("data-date", (d) => d[0]);
       })
       .on("mouseout", () => {
         USGDP.div.transition()        
@@ -87,9 +88,21 @@ const USGDP = {
     const yAxis = d3.axisLeft(yScale);
     svg.append("g")
       .attr("transform", "translate(" + USGDP.padding + "," + (USGDP.h + USGDP.padding) + ")")
-      .call(xAxis);
+      .call(xAxis)      
+      .attr("id", "x-axis");
     svg.append("g")
       .attr("transform", "translate(" + USGDP.padding + "," + USGDP.padding + ")")
-      .call(yAxis);
+      .call(yAxis)
+      .attr("id", "y-axis");
+    svg.append("text")
+      .attr('transform', 'rotate(-90)')
+      .attr('x', -320)
+      .attr('y', 80)
+      .text(json.name);
+    svg.append("text")
+      .attr('x', USGDP.w - USGDP.padding * 3.4)
+      .attr('y', USGDP.h + USGDP.padding * 1.8)
+      .text("http://www.bea.gov/national/pdf/nipaguid.pdf")
+      .attr('class', 'info');
   }
 }
