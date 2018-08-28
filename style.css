@@ -1,3 +1,12 @@
+@font-face {font-family: "MuseoSansW01-Rounded300";
+    src: url("//db.onlinewebfonts.com/t/1b4cd06b44538d529084b3599f708643.eot");
+    src: url("//db.onlinewebfonts.com/t/1b4cd06b44538d529084b3599f708643.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/1b4cd06b44538d529084b3599f708643.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/1b4cd06b44538d529084b3599f708643.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/1b4cd06b44538d529084b3599f708643.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/1b4cd06b44538d529084b3599f708643.svg#MuseoSansW01-Rounded300") format("svg");
+}
+
 body {
 /*   background-color: #4AC7CA; */
 /*   background-color: #90A9C8; */
@@ -8,7 +17,9 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;  
+  font-family: "MuseoSansW01-Rounded300";
+  color: #1A1A00;
 }
 .conteiner {
   background-color: #FFFFE5;
@@ -16,11 +27,8 @@ body {
   width: 900px;
   box-shadow: 2px 2px 20px;
 }
-.tick {
-  color: #333300;
-}
 .bar {
-  fill: #362F78;
+  fill: #70A2E3;
 }
 .bar:hover {
   fill: #FFFFE5;
@@ -28,17 +36,21 @@ body {
 
 #title {
   text-align: center;
-  font-size: 26px;
+  font-size: 36px;
 }
-#tooltip {	
-    position: absolute;			
-    text-align: center;			
-    width: 120px;					
-    height: 40px;					
-    padding: 2px;				
-    font: 16px sans-serif;		
-    background: lightsteelblue;	
-    border: 0px;		
-    border-radius: 8px;			
-    pointer-events: none;			
+#tooltip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;			
+  text-align: center;			
+  width: 130px;					
+  height: 46px;					
+  padding: 2px;				
+  font: 16px;		
+  background: lightsteelblue;	
+  border: 0px;		
+  border-radius: 3px;			
+  pointer-events: none;
+  box-shadow: 1px 1px 10px;
 }
