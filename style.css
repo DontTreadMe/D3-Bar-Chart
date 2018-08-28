@@ -6,12 +6,6 @@
     url("//db.onlinewebfonts.com/t/1b4cd06b44538d529084b3599f708643.ttf") format("truetype"),
     url("//db.onlinewebfonts.com/t/1b4cd06b44538d529084b3599f708643.svg#MuseoSansW01-Rounded300") format("svg");
 }
-
-body {
-/*   background-color: #4AC7CA; */
-/*   background-color: #90A9C8; */
-/*    background-color: #C5A684; */
-}
 #root {
   width: 100vw;
   height: 100vh;
@@ -53,4 +47,7 @@ body {
   border-radius: 3px;			
   pointer-events: none;
   box-shadow: 1px 1px 10px;
+}
+.info {
+  font-size: 0.8em;
 }
