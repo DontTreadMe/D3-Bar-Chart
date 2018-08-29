@@ -46,9 +46,9 @@ body {
   height: 46px;					
   padding: 2px;				
   font: 16px;		
-  background: lighten($bodyColor, 34%);	
+  background: lighten($bodyColor, 54%);	
   border: 0px;		
-  border-radius: 3px;			
+  border-radius: 2px;			
   pointer-events: none;
   box-shadow: 1px 1px 10px;
 }
