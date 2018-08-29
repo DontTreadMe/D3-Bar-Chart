@@ -1,10 +1,15 @@
-@font-face {font-family: "MuseoSansW01-Rounded300";
-    src: url("//db.onlinewebfonts.com/t/1b4cd06b44538d529084b3599f708643.eot");
-    src: url("//db.onlinewebfonts.com/t/1b4cd06b44538d529084b3599f708643.eot?#iefix") format("embedded-opentype"),
-    url("//db.onlinewebfonts.com/t/1b4cd06b44538d529084b3599f708643.woff2") format("woff2"),
-    url("//db.onlinewebfonts.com/t/1b4cd06b44538d529084b3599f708643.woff") format("woff"),
-    url("//db.onlinewebfonts.com/t/1b4cd06b44538d529084b3599f708643.ttf") format("truetype"),
-    url("//db.onlinewebfonts.com/t/1b4cd06b44538d529084b3599f708643.svg#MuseoSansW01-Rounded300") format("svg");
+$barColor: #ED3752;
+$bodyColor: #324D5C;
+@font-face {font-family: "FlexoW01-Regular";
+    src: url("//db.onlinewebfonts.com/t/ea0517f0c20dfd81ffa9363950561257.eot");
+    src: url("//db.onlinewebfonts.com/t/ea0517f0c20dfd81ffa9363950561257.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/ea0517f0c20dfd81ffa9363950561257.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/ea0517f0c20dfd81ffa9363950561257.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/ea0517f0c20dfd81ffa9363950561257.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/ea0517f0c20dfd81ffa9363950561257.svg#FlexoW01-Regular") format("svg");
+}
+body { 
+  background-color: $bodyColor;
 }
 #root {
   width: 100vw;
@@ -12,25 +17,24 @@
   display: flex;
   justify-content: center;
   align-items: center;  
-  font-family: "MuseoSansW01-Rounded300";
-  color: #1A1A00;
+  font-family: "FlexoW01-Regular";
 }
 .conteiner {
-  background-color: #FFFFE5;
+  background-color: #fff;
   padding: 20px;
   width: 900px;
   box-shadow: 2px 2px 20px;
 }
 .bar {
-  fill: #70A2E3;
+  fill: $barColor;
 }
 .bar:hover {
-  fill: #FFFFE5;
+  fill: #fff;
 }
 
 #title {
   text-align: center;
-  font-size: 36px;
+  font-size: 40px;
 }
 #tooltip {
   display: flex;
@@ -42,7 +46,7 @@
   height: 46px;					
   padding: 2px;				
   font: 16px;		
-  background: lightsteelblue;	
+  background: lighten($bodyColor, 34%);	
   border: 0px;		
   border-radius: 3px;			
   pointer-events: none;
